@@ -1,0 +1,21 @@
+﻿@using TravelTripProject.Models.Entities
+@model List<About>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_TestLayout.cshtml";
+}
+
+<div class="content">
+    <div class="wrap">
+        <div class="about">
+            <h3>Hakkımızda</h3>
+            
+            @foreach (var about in Model)
+            {
+                <img src="@about.ImageUrl" alt="" />
+                <p>@about.Description</p>
+            }
+        </div>
+    </div>
+</div>
+

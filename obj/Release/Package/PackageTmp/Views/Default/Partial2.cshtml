@@ -1,0 +1,16 @@
+﻿@using TravelTripProject.Models.Entities;
+@model List<Blog> 
+@foreach (var x in Model)
+{
+    <div class="right">
+        <div class="bot-left">
+            <img src="@x.BlogImage" alt=""/>
+        </div>
+        <div class="left-text">
+            <h4>@x.Header</h4>
+            <p>@x.Description.Substring(0, 80)</p>
+            <p><a href="/Blog/BlogDetay/@x.Id"><span class="read">Devamını oku>></span></a></p>
+            <span class="doller"> @x.BlogDate.ToShortDateString()</span>
+        </div>
+    </div>
+}

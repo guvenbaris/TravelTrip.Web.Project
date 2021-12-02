@@ -1,0 +1,78 @@
+﻿@model TravelTripProject.Models.Entities.BlogComment
+@{
+    ViewBag.Title = "BlogDetay";
+    Layout = "~/Views/Shared/_TestLayout.cshtml";
+}
+
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Personal Blog a Blogging Category Flat Bootstarp  Responsive Website Template | Single :: w3layouts</title>
+    <link href="~/webBlog/css/bootstrap.css" rel='stylesheet' type='text/css' />
+    <link href="~/webBlog/css/style.css" rel='stylesheet' type='text/css' />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="Personal Blog Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template,
+	Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+
+
+</head>
+<body>
+    <!---header---->
+    <div class="header">
+    </div>
+<div class="single">
+    <div class="container">
+        <div class="col-md-8 single-main">
+            <div class="single-grid">
+                @foreach (var blog in Model.Blogs)
+                {
+                    <img src="@blog.BlogImage" alt="" style ="margin-bottom:20px"/>
+                    <h2>@blog.Header</h2>
+                    <p>
+                        @blog.Description
+                    </p>
+                }
+            
+            </div>
+            @foreach (var comment in Model.Comments)
+            {
+                <ul class="comment-list">
+                    <li>
+                        <img src="~/webBLog/images/avatar.png" class="img-responsive" alt="">
+                        <div class="desc">
+                            <p><b>@comment.UserName</b> : @comment.CommentDescription</p>
+                        </div>
+                        <div class="clearfix"></div>
+                    </li>
+                </ul>
+            }
+
+            @Html.Action("DoComment","Blog")
+        </div>
+        <div class="col-md-4 side-content">
+            <div class="recent">
+                <h3>RECENT POSTS</h3>
+                <ul>
+                    <li><a href="#">Aliquam tincidunt mauris</a></li>
+                    <li><a href="#">Vestibulum auctor dapibus  lipsum</a></li>
+                    <li><a href="#">Nunc dignissim risus consecu</a></li>
+                    <li><a href="#">Cras ornare tristiqu</a></li>
+                </ul>
+            </div>
+            <div class="comments">
+                <h3>RECENT COMMENTS</h3>
+                <ul>
+                    <li><a href="#">Amada Doe </a> on <a href="#">Hello World!</a></li>
+                    <li><a href="#">Peter Doe </a> on <a href="#"> Photography</a></li>
+                    <li><a href="#">Steve Roberts  </a> on <a href="#">HTML5/CSS3</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+</div>
+</body>
+</html>
+
+
