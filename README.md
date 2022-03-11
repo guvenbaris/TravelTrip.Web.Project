@@ -1,6 +1,6 @@
 # Travel Trip Web Project
 
-Tatil seyahat blog sayfası tasarımı yapılmıştır. Adming dashboard tasarlanmıştır.
+Tatil seyahat blog sayfası tasarımı yapılmıştır. Ek olarak admin dashboard tasarlanmıştır.
 
 MVC ile tasarım yapılmıştır. 
 
